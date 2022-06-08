@@ -1,3 +1,10 @@
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import DecoyLanding from './pages/DecoyLanding';
+import Landing from './pages/Landing';
+import Login from './pages/Login';
+import Profile from './pages/Profile';
+import Navbar from './components/Navbar';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
@@ -7,21 +14,18 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div>
-      <Navbar />
-
-
-      <Router>
-        <>
-          <Switch>
-            <Route exact path='/login' component={LoginForm} />
-            <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
-          </Switch>
-        </>
-      </Router>
-
-
-    </div>
+    <Router>
+      <>
+        <Navbar />
+        <Switch>
+          <Route exact path='/' component={DecoyLanding} />
+          <Route exact path='/landing' component={Landing} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/profile' component={Profile} />
+          <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
+        </Switch>
+      </>
+    </Router>
   );
 }
 
