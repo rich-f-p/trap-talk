@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import DecoyLanding from './pages/DecoyLanding';
+import DecoyLanding from './pages/decoyLanding';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
