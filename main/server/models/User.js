@@ -38,7 +38,13 @@ userSchema.pre('save', async function (next) {
     next();
   });
 
-
+userSchema.virtual('convoCount').get(function(){
+    if(this.conversations.length !== null){
+    return this.conversations.length;
+    }else{
+        return 'no count'
+    }
+});
 
 
 const User = model('User', userSchema);
