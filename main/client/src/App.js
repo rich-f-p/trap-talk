@@ -6,9 +6,8 @@ import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Navbar from './components/Navbar';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
-import Navbar from './components/Navbar';
+
 
 // import Login from './pages/Login';
 
