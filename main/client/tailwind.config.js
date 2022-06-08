@@ -1,7 +1,7 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
-  theme: {
-    extend: {},
-  },
+  daisyui:{
+  theme: [ "luxury", "bumblebee"]
+},
   plugins: [require("daisyui")],
 }
