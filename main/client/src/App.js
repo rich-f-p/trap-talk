@@ -6,6 +6,10 @@ import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Navbar from './components/Navbar';
 import './App.css';
+import LoginForm from './components/LoginForm';
+
+
+// import Login from './pages/Login';
 
 function App() {
   return (
