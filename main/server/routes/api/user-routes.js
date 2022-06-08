@@ -15,7 +15,7 @@ router.route('/').post(createUser).put(authMiddleware,saveFriend);
 
 router.route('/login').post(login);
 
-router.route('/user').get(singleUser);
+router.route('/single').get(singleUser);
 
 router.route('/message').put(addConvo);
 
