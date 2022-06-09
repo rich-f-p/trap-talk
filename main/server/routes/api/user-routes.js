@@ -6,6 +6,7 @@ const {
     login,
     saveFriend,
     addConvo,
+    allUsers
 } = require('../../controllers/user-controller');
 const { authMiddleware} = require('../../utils/auth');
 //test http://localhost:3001/api/users/
@@ -15,9 +16,11 @@ router.route('/').post(createUser).put(authMiddleware,saveFriend);
 
 router.route('/login').post(login);
 
-router.route('/single').get(singleUser);
+router.route('/single/:id').get(singleUser);
 
 router.route('/message').put(addConvo);
+
+router.route('/all').get(allUsers);
 
 
 module.exports = router;
