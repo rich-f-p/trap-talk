@@ -54,6 +54,10 @@ const CreateUserForm = () => {
                             id="username-login"
                             type="text"
                             placeholder="Type here"
+                            name='username'
+                            onChange={handleInputChange}
+                            value={userFormData.username}
+                            required
                             className="input input-bordered w-full max-w-xs"
                         />
                     </div>
@@ -64,6 +68,10 @@ const CreateUserForm = () => {
                         <input
                             id="password-login"
                             type="password"
+                            name='password'
+                            onChange={handleInputChange}
+                            value={userFormData.password}
+                            required
                             placeholder="Type here"
                             className="input input-bordered w-full max-w-xs"
                         />
@@ -75,13 +83,17 @@ const CreateUserForm = () => {
                         <input
                             id="password-login"
                             type="password"
+                            name='password2'
+                            onChange={handleInputChange}
+                            value={userFormData.password2}
+                            required
                             placeholder="Type here"
                             className="input input-bordered w-full max-w-xs"
                         />
                     </div>
                     <div className="card-actions">
                         <button className="btn btn-neutral w-full"
-                            id="main-create-btn">
+                            id="main-create-btn" onSubmit={handleFormSubmit}>
                         Create Account</button>
                         <div className="divider w-full">OR</div>
                         <button id="login-btn" className="btn btn-secondary w-full">Login</button>
