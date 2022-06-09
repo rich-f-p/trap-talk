@@ -1,8 +1,21 @@
 import decode from 'jwt-decode';
 
 class AuthToken{
-    
 
+    tokenExpired(token){
+        try{
+            const decodedToken = decode(token);
+            if(decodedToken * 1000 < Date.now()){
+                return true;
+            }
+            else{
+            return false;
+            }
+        }
+        catch(err) {
+            return false;
+        }
+    }
 
     getToken(){
         return localStorage.getItem('id_token');
