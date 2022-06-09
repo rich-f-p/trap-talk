@@ -1,8 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-
 const friendSchema = require('./Friends');
-const conversationSchema = require('./Conversations');
 
 const userSchema = new Schema(
     {
@@ -21,7 +19,6 @@ const userSchema = new Schema(
             required: true,
         },
         friends: [friendSchema],
-        conversations: [conversationSchema],
     },
     {
         toJSON: {
@@ -38,9 +35,9 @@ userSchema.pre('save', async function (next) {
     next();
   });
 
-userSchema.virtual('convoCount').get(function(){
-    if(this.conversations.length !== null){
-    return this.conversations.length;
+userSchema.virtual('friendCount').get(function(){
+    if(this.friends.length !== undefined){
+    return this.friends.length;
     }else{
         return 'no count'
     }

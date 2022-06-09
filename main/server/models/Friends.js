@@ -1,8 +1,13 @@
 const { Schema } = require('mongoose');
 const userSchema = require('./User');
+const conversationSchema = require('./Conversations')
 
 const friendSchema = new Schema({
-    username: [userSchema],
+    username:{ 
+        type: String,
+        required: true,
+    },
+    convo: [conversationSchema],
     request:{
         type: String,
     },
