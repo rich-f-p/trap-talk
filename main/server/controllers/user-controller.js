@@ -3,7 +3,7 @@ const {myToken} = require('../utils/auth')
 
 module.exports = {
     async test(req,res){
-        res.json('test good')
+        res.status(200).json('test good')
     },
     async singleUser({user, params}, res){
         const foundUser = await User.findOne({
@@ -12,7 +12,7 @@ module.exports = {
           if (!foundUser) {
             return res.status(400).json({ message: 'invalid id!' });
           }
-          res.json(foundUser);
+          res.status(200).json(foundUser);
     },
     async createUser({ body }, res) {
         const user = await User.create(body);
@@ -20,7 +20,7 @@ module.exports = {
           return res.status(400).json({ message: 'user not created' });
         }
         const token = myToken(user);
-        res.json({ token, user });
+        res.status(200).json({ token, user });
     },
     async login({ body }, res){
         const user = await User.findOne({$or: [{ username: body.username },{ email: body.email }]});
@@ -59,6 +59,12 @@ module.exports = {
             console.log(err);
             return res.status(400).json(err);
         }
+    },
+    async allUsers(req,res){
+        const user = await User.find();
+        if (!user){
+            return res.status(400).json({message:'no users'});
+        }
+        res.status(200).json(user);
     }
-    
 }
