@@ -34,7 +34,7 @@ const LoginForm = () => {
             password: '',
         });
     };
-    return(
+    return (
         <div id="login-form" class="w-full flex justify-center mt-50">
             <div class="card w-96 bg-base-100 shadow-xl flex justify-center">
                 <div class="card-body">
@@ -62,11 +62,11 @@ const LoginForm = () => {
                         />
                     </div>
                     <div class="card-actions">
-                        <a
+                        <button onClick={() => handleFormSubmit()}><a
                             href="#my-modal-2"
                             class="btn btn-accent w-full"
                             id="main-login-btn"
-                        >Login</a>
+                        >Login</a></button>
                         <div class="divider w-full">OR</div>
                         <button id="create-btn" class="btn btn-secondary w-full">Create
                             Account</button>
