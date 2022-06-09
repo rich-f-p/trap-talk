@@ -34,41 +34,39 @@ const LoginForm = () => {
             password: '',
         });
     };
-    return(
-        <div id="login-form" class="w-full flex justify-center mt-50">
-            <div class="card w-96 bg-base-100 shadow-xl flex justify-center">
-                <div class="card-body">
-                    <h2 class="card-title">Login</h2>
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Username</span>
+    return (
+        <div id="login-form" className="w-full flex justify-center mt-50">
+            <div className="card w-96 bg-base-100 shadow-xl flex justify-center">
+                <div className="card-body">
+                    <h2 className="card-title">Login</h2>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Username</span>
                         </label>
                         <input
                             id="username-login"
                             type="text"
                             placeholder="Type here"
-                            class="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full max-w-xs"
                         />
                     </div>
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Password</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Password</span>
                         </label>
                         <input
                             id="password-login"
                             type="password"
                             placeholder="Type here"
-                            class="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full max-w-xs"
                         />
                     </div>
-                    <div class="card-actions">
-                        <a
-                            href="#my-modal-2"
-                            class="btn btn-accent w-full"
-                            id="main-login-btn"
-                        >Login</a>
-                        <div class="divider w-full">OR</div>
-                        <button id="create-btn" class="btn btn-secondary w-full">Create
+                    <div className="card-actions">
+                        <button className="btn btn-neutral w-full"
+                            id="main-login-btn" onClick={() => handleFormSubmit()}>
+                        Login</button>
+                        <div className="divider w-full">OR</div>
+                        <button id="create-btn" className="btn btn-secondary w-full">Create
                             Account</button>
                     </div>
                 </div>

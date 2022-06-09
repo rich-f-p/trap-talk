@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from "daisyui";
 
-import { getMe, easterEgg } from '../utils/API';
+import { getMe} from '../utils/API'; //easterEgg } from '../utils/API';
 import Auth from '../utils/auth';
 //import { removemessageId } from '../utils/localStorage';
 
@@ -45,20 +45,20 @@ const DecoyMessage = () => {
       return false;
     }
 
-    try {
-      const response = await easterEgg(messageId, token);
+  //   try {
+  //     const response = await easterEgg(messageId, token);
 
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
+  //     if (!response.ok) {
+  //       throw new Error('something went wrong!');
+  //     }
 
-      const updatedUser = await response.json();
-      setUserData(updatedUser);
-      // upon success, remove message's id from localStorage
-      realMessage(messageId);
-    } catch (err) {
-      console.error(err);
-    }
+  //     const updatedUser = await response.json();
+  //     setUserData(updatedUser);
+  //     // upon success, remove message's id from localStorage
+  //     realMessage(messageId);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
   };
 
   // if data isn't here yet, say so
