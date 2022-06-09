@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Card } from "daisyui";
 
 import { getMe} from '../utils/API'; //easterEgg } from '../utils/API';
+
 import Auth from '../utils/auth';
 //import { removemessageId } from '../utils/localStorage';
 
@@ -36,7 +37,7 @@ const DecoyMessage = () => {
     getUserData();
   }, [userDataLength]);
 
-  // create function that accepts the message's mongo _id value as param and deletes the message from the database
+
   const realMessage = async (messageId) => {
       //pin auth here
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -45,6 +46,21 @@ const DecoyMessage = () => {
       return false;
     }
 
+
+    // try {
+    //   // const response = await easterEgg(messageId, token);
+
+    //   if (!response.ok) {
+    //     throw new Error('something went wrong!');
+    //   }
+
+    //   const updatedUser = await response.json();
+    //   setUserData(updatedUser);
+
+    //   realMessage(messageId);
+    // } catch (err) {
+    //   console.error(err);
+    // }
   //   try {
   //     const response = await easterEgg(messageId, token);
 
@@ -61,7 +77,6 @@ const DecoyMessage = () => {
   //   }
   };
 
-  // if data isn't here yet, say so
   if (!userDataLength) {
     return <h2>LOADING...</h2>;
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import DecoyMessage from './pages/decoyLanding';
 import Landing from './pages/Landing';
-//import Login from './pages/Login';
+import CreateUserForm from './components/CreateAccountForm';
 import Profile from './pages/Profile';
 import Navbar from './components/Navbar';
 import './App.css';
@@ -20,6 +20,7 @@ function App() {
           <Route exact path='/' component={DecoyMessage} />
           <Route exact path='/landing' component={Landing} />
           <Route exact path='/login' component={LoginForm} />
+          <Route exact path='/createAccount' component={CreateUserForm} />
           <Route exact path='/profile' component={Profile} />
           <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
         </Switch>
