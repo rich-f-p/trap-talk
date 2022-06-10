@@ -1,33 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { 
-    getMe,
     receiveMessage,
     sendMessage} from '../utils/API';
 import Auth from '../utils/auth';
 
-const messages = () =>{
+const Messages = () =>{
     const [userData,setUserData] = useState({});
     const [messageData,setMessageData] = useState({});
 
+    const userDataLength = Object.keys(userData).length;
+    const messageDataLength = Object.keys(messageData).length;
+
     useEffect(() => {
-        const getUserData = async () =>{
+        const realUserData = async () =>{
             try{
-                const token = Auth.loggedIn() ? Auth.getToken() : null;
+                const token = Auth.pinNumber() ? Auth.getToken() : null;
 
                 if (!token) {
                 return false;
                 }
-                const response = await getMe(token);
+                const response = await receiveMessage(token);
                 if(!response.ok){
-                    throw new Error('landing no user');
+                    throw new Error('Access Denied');
                 }
                 const user = await response.json();
                 setUserData(user);
             }catch(err){
                 console.log(err)
             }
-        }
-    })
+           };
+           realUserData();
+    }, [userDataLength, messageDataLength])
 
     const handleClick = async (messageId) => {
         const token = Auth.loggedIn() ? Auth.getToken(): null;
@@ -36,11 +39,14 @@ const messages = () =>{
         }
         try{
             const response = await receiveMessage(messageId, token);
+            const send = await sendMessage(messageId);
             if(!response.ok){
-                throw new Error('landing handleclick error');
+                throw new Error('Error');
             }
             const message = await response.json();
+            const messageToSend = await send.json();
             setMessageData(message);
+            setMessageData(messageToSend);
         } catch(err){
             console.log(err);
         }
@@ -83,4 +89,4 @@ return (
 );
 }
 
-export default messages;
+export default Messages;
