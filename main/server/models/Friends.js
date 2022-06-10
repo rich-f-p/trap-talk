@@ -8,7 +8,7 @@ const friendSchema = new Schema({
         required: true,
         unique: true,
     },
-    convo:[{conversationSchema}],
+    convo:[conversationSchema],
     request:{
         type: String,
     },

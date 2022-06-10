@@ -51,7 +51,7 @@ module.exports = {
         try{
             const updateCon = await User.findOneAndUpdate(
                 {$or: [{ _id: user ? user._id : params.id }, {username:params.user, "friends._id":params._id }]},
-                {$addToSet: {"friends.$.convo": body}},
+                {$push: {"friends.0.convo": body}},
                 {new: true}
             );
             return res.json(updateCon);
