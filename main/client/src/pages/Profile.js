@@ -2,6 +2,12 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import avatar from "../images/avatarface.jpeg"
 
+const portS = {
+    fontSize: "150%",
+    color: "white",
+}
+
+
 const Profile = () => {
 
 
@@ -15,7 +21,7 @@ const Profile = () => {
                     <h2 class="card-title">My Profile</h2>
                     <p></p>
                 </div>
-                <figure><img src={avatar} alt="Avatar" /></figure>
+                <figure style={portS}><img src={avatar} alt="Avatar" /></figure>
             </div></>
 
     );
