@@ -20,7 +20,7 @@ router.route('/login').post(login);
 
 router.route('/single/:id').get(singleUser);
 
-router.route('/message/:user').put(addConvo);
+router.route('/message/:user/:_id').put(addConvo);
 
 router.route('/all').get(allUsers);
 

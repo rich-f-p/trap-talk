@@ -47,11 +47,11 @@ module.exports = {
             return res.status(400).json(err);
         }
     },
-    async addConvo({user, body}, res){
+    async addConvo({user, body, params}, res){
         try{
             const updateCon = await User.findOneAndUpdate(
-                {_id: user._id},
-                {$addToSet: {conversations: body}},
+                {$or: [{ _id: user ? user._id : params.id }, {username:params.user, "friends._id":params._id }]},
+                {$addToSet: {"friends.$.convo": body}},
                 {new: true}
             );
             return res.json(updateCon);
