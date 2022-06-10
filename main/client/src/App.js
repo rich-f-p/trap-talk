@@ -18,11 +18,10 @@ function App() {
       <>
         
         <Switch>  
-          <Route exact path='/login' component={LoginForm} />
-          <Route exact path='/' component={DecoyMessage} />
+          <Route exact path='/' component={LoginForm} />
           <Route exact path='/createAccount' component={CreateUserForm} />
           <Route exact path='/home' component={DecoyMessage} />
-          <Route exact path='/landing' component={Messages} />
+          <Route exact path='/messages' component={Messages} />
           <Route exact path='/profile' component={Profile} />
           <Route exact path='/search' component={FriendSearch} />
           <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
