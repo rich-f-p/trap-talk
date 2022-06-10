@@ -81,42 +81,57 @@ const DecoyMessage = () => {
   // }
 
   return (
-    //     <>
-
-    //       <Card> 
-    //         <h2>
-    //           {userData.savedMessages.length
-    //             ? `Viewing ${userData.savedMessages.length} saved ${userData.savedMessages.length === 1 ? 'message' : 'messages'}:`
-    //             : 'You have no saved messages!'}
-    //         </h2>
-
-    //             {userData.savedMessages.map((message) => {
-    //             return (
-    //         <div class="card w-96 bg-primary text-primary-content">
-    //   <div class="card-body" key={message.messageId}>
-    //     <h2 class="card-title">{message.title}</h2>
-    //     <p>{message.description}</p>
-    //     <p className='small'>From: {message.authors}</p>
-    //     <div class="card-actions justify-end">
-    //       <button class="btn"onClick={() => realMessage(message.messageId)}>Send</button>
-    //     </div>
-    //   </div>
-    // </div>
-    //             );
-    //           })}
-    //         </Card>
-    //     </>
-
-    <div class="card lg:card-side bg-base-100 shadow-xl">
+<>
+    <div class="card lg:card-side bg-base-100 shadow-xl m-5 w-">
       <figure></figure>
-      <div class="card-body">
-        <h2 class="card-title">New album is released!</h2>
-        <p>Click the button to listen on Spotiwhy app.</p>
+        <h2 class="card-title">From: xXx_KeViN_sHaRk_xXx</h2>
+        <p>Message: Hey, what you up to?</p>
+        <div class="card-body">
+          <label for="my-modal-3" class="btn btn-ghost btn-xs modal-button max-w-fit">Sent yesterday</label>
         <div class="card-actions justify-end">
-          <button class="btn btn-primary">Listen</button>
+       
+          <button class="btn btn-primary">open</button>
         </div>
       </div>
     </div>
+    
+    <div class="card lg:card-side bg-base-100 shadow-xl m-5">
+      <figure></figure>
+        <h2 class="card-title">From: Sophtron</h2>
+        <p>Message: Hey, what you up to?</p>
+        <div class="card-body">
+          <label for="my-modal-3" class="btn btn-ghost btn-xs modal-button max-w-fit">Sent yesterday</label>
+        <div class="card-actions justify-end">
+       
+          <button class="btn btn-primary">open</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card lg:card-side bg-base-100 shadow-xl m-5">
+      <figure></figure>
+        <h2 class="card-title">From: </h2>
+        <p>Message: Hey, what you up to?</p>
+        <div class="card-body">
+          <label for="my-modal-3" class="btn btn-ghost btn-xs modal-button max-w-fit">Sent yesterday</label>
+        <div class="card-actions justify-end">
+       
+          <button class="btn btn-primary">open</button>
+        </div>
+      </div>
+    </div>
+
+<input type="checkbox" id="my-modal-3" class="modal-toggle" />
+<div class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box relative">
+    <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+    <h3 class="text-lg font-bold"></h3>
+    <p class="py-4"></p>
+    <input type="text" placeholder="Pin" class="input input-bordered w-full max-w-xs" />
+    <input type="submit" value="Go" class="btn btn-sm" />
+  </div>
+</div>
+</>
   );
 };
 
