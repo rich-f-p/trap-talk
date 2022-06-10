@@ -2,6 +2,7 @@ import React from "react";
 import logo from '../images/traptalk-transparent.png';
 
 
+
 function Navbar() {
     return (
         <div className="App">
@@ -11,8 +12,8 @@ function Navbar() {
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </button>
                 </div>
-                <div className="flex-1 object-scale-down" style={{width:"95px;", height:"auto;"}}>
-                    <img alt="logo" className="object-scale-down" src={logo}></img>
+                <div className="flex-1 object-scale-down">
+                    <img alt="logo" className='h-24' src={logo}></img>
                 </div>
                 <div className="flex-none">
                     <button className="btn btn-square btn-ghost">
