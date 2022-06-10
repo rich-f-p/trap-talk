@@ -34,24 +34,24 @@ module.exports = {
         const token = myToken(user);
         res.json({token, user});
     },
-    async saveFriend({user, body}, res){
+    async saveFriend({user,body, params}, res){
         try{
             const addfriend = await User.findOneAndUpdate(
-                {_id: user._id},
-                {$addToSet: {friends: body}},
+                {$or: [{ _id: user ? user._id : params.id }, { username: params.username }]},
+                {$addToSet: {friends:body}},
                 {new: true}
             );
-            return res.json(addfriend);
+            return res.status(200).json(addfriend.friends);
         }catch(err){
             console.log(err);
             return res.status(400).json(err);
         }
     },
-    async addConvo({user, body}, res){
+    async addConvo({user, body, params}, res){
         try{
             const updateCon = await User.findOneAndUpdate(
-                {_id: user._id},
-                {$addToSet: {conversations: body}},
+                {$or: [{ _id: user ? user._id : params.id }, {username:params.user, "friends._id":params._id }]},
+                {$push: {"friends.0.convo": body}},
                 {new: true}
             );
             return res.json(updateCon);

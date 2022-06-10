@@ -9,7 +9,7 @@ const conversationSchema = new Schema({
     text:{
         type: String,
     },
-    user:[userSchema],
+    user:{ type: String},
 })
 
 module.exports = conversationSchema;
