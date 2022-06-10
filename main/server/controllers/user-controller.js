@@ -47,12 +47,12 @@ module.exports = {
             return res.status(400).json(err);
         }
     },
-    async addConvo({user, body, params}, res){
+    async addConvo({user, body, params,}, res){
         try{
             const updateCon = await User.findOneAndUpdate(
-                {$or: [{ _id: user ? user._id : params.id }, {username:params.user, "friends._id":params._id }]},
-                {$push: {"friends.0.convo": body}},
-                {new: true}
+                {username:params.user,friends:{"$elemMatch":{"_id":params._id }}},
+                {$push: {"friends.$.convo":body}},
+                {new:true,select:{friends:{$elemMatch:{'_id': params._id}}}}
             );
             return res.json(updateCon);
         }catch(err){

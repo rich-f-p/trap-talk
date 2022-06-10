@@ -24,7 +24,7 @@ router.route('/single/:id').get(singleUser);
 router.route('/me').get(authMiddleware, singleUser);
 // gets a user through token
 
-router.route('/message/:user/:_id').put(addConvo);
+router.route('/message/:user/:_id/').put(addConvo);
 
 router.route('/all').get(allUsers);
 
