@@ -1,11 +1,8 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import avatar from "../images/avatarface.jpeg"
+import avatar from "../images/traptalk-avatar.png"
 
-const portS = {
-    fontSize: "150%",
-    color: "white",
-}
+
 
 
 const Profile = () => {
@@ -16,12 +13,12 @@ const Profile = () => {
     return (
         <><Navbar />
 
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="card-title">My Profile</h2>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="card-title">My Profile</h2>
                     <p></p>
                 </div>
-                <figure style={portS}><img src={avatar} alt="Avatar" /></figure>
+                <figure><img src={avatar} alt="Avatar" /></figure>
             </div></>
 
     );
