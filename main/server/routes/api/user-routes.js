@@ -12,13 +12,15 @@ const { authMiddleware} = require('../../utils/auth');
 //test http://localhost:3001/api/users/
 //router.route('/').get(test);
 
-router.route('/').post(createUser).put(authMiddleware,saveFriend);
+router.route('/').post(createUser);
+
+router.route('/add/:username').put(/*authMiddleware,*/saveFriend);
 
 router.route('/login').post(login);
 
 router.route('/single/:id').get(singleUser);
 
-router.route('/message').put(addConvo);
+router.route('/message/:user/:_id').put(addConvo);
 
 router.route('/all').get(allUsers);
 
