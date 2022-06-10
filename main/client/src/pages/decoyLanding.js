@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from "daisyui";
 
-import { getMe} from '../utils/API'; //easterEgg } from '../utils/API';
+import { getMe } from '../utils/API'; //easterEgg } from '../utils/API';
 
 import Auth from '../utils/auth';
 //import { removemessageId } from '../utils/localStorage';
@@ -39,7 +39,7 @@ const DecoyMessage = () => {
 
 
   const realMessage = async (messageId) => {
-      //pin auth here
+    //pin auth here
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -61,52 +61,63 @@ const DecoyMessage = () => {
     // } catch (err) {
     //   console.error(err);
     // }
-  //   try {
-  //     const response = await easterEgg(messageId, token);
+    //   try {
+    //     const response = await easterEgg(messageId, token);
 
-  //     if (!response.ok) {
-  //       throw new Error('something went wrong!');
-  //     }
+    //     if (!response.ok) {
+    //       throw new Error('something went wrong!');
+    //     }
 
-  //     const updatedUser = await response.json();
-  //     setUserData(updatedUser);
-  //     // upon success, remove message's id from localStorage
-  //     realMessage(messageId);
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
+    //     const updatedUser = await response.json();
+    //     setUserData(updatedUser);
+    //     // upon success, remove message's id from localStorage
+    //     realMessage(messageId);
+    //   } catch (err) {
+    //     console.error(err);
+    //   }
   };
 
-  if (!userDataLength) {
-    return <h2>LOADING...</h2>;
-  }
+  // if (!userDataLength) {
+  //   return <h2>LOADING...</h2>;
+  // }
 
   return (
-    <>
+    //     <>
 
-      <Card> 
-        <h2>
-          {userData.savedMessages.length
-            ? `Viewing ${userData.savedMessages.length} saved ${userData.savedMessages.length === 1 ? 'message' : 'messages'}:`
-            : 'You have no saved messages!'}
-        </h2>
-        
-            {userData.savedMessages.map((message) => {
-            return (
-        <div class="card w-96 bg-primary text-primary-content">
-  <div class="card-body" key={message.messageId}>
-    <h2 class="card-title">{message.title}</h2>
-    <p>{message.description}</p>
-    <p className='small'>From: {message.authors}</p>
-    <div class="card-actions justify-end">
-      <button class="btn"onClick={() => realMessage(message.messageId)}>Send</button>
+    //       <Card> 
+    //         <h2>
+    //           {userData.savedMessages.length
+    //             ? `Viewing ${userData.savedMessages.length} saved ${userData.savedMessages.length === 1 ? 'message' : 'messages'}:`
+    //             : 'You have no saved messages!'}
+    //         </h2>
+
+    //             {userData.savedMessages.map((message) => {
+    //             return (
+    //         <div class="card w-96 bg-primary text-primary-content">
+    //   <div class="card-body" key={message.messageId}>
+    //     <h2 class="card-title">{message.title}</h2>
+    //     <p>{message.description}</p>
+    //     <p className='small'>From: {message.authors}</p>
+    //     <div class="card-actions justify-end">
+    //       <button class="btn"onClick={() => realMessage(message.messageId)}>Send</button>
+    //     </div>
+    //   </div>
+    // </div>
+    //             );
+    //           })}
+    //         </Card>
+    //     </>
+
+    <div class="card lg:card-side bg-base-100 shadow-xl">
+      <figure></figure>
+      <div class="card-body">
+        <h2 class="card-title">New album is released!</h2>
+        <p>Click the button to listen on Spotiwhy app.</p>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary">Listen</button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-            );
-          })}
-        </Card>
-    </>
   );
 };
 
