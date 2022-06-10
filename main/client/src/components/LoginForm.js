@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { loginUser } from '../utils/API';
 import Auth from '../utils/auth';
 
@@ -66,8 +67,10 @@ const LoginForm = () => {
                             id="main-login-btn" onClick={() => handleFormSubmit()}>
                         Login</button>
                         <div className="divider w-full">OR</div>
-                        <button id="create-btn" className="btn btn-secondary w-full">Create
+                        <Link to='/createAccount' className="btn btn-secondary w-full">
+                        <button id="create-btn">Create
                             Account</button>
+                        </Link>
                     </div>
                 </div>
             </div>
