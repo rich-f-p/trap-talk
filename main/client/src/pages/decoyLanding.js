@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from "daisyui";
 
 import { getMe } from '../utils/API'; //easterEgg } from '../utils/API';
 
@@ -13,9 +12,9 @@ const DecoyMessage = () => {
   const userDataLength = Object.keys(userData).length;
 
   useEffect(() => {
-    const getUserData = async () => {
+    const fakeUserData = async () => {
       try {
-        const token = Auth.loggedIn() ? Auth.getToken() : null;
+        const token = Auth.logIn() ? Auth.getToken() : null;
 
         if (!token) {
           return false;
@@ -34,7 +33,7 @@ const DecoyMessage = () => {
       }
     };
 
-    getUserData();
+    fakeUserData();
   }, [userDataLength]);
 
 
