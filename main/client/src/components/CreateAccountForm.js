@@ -92,7 +92,7 @@ const CreateUserForm = () => {
                         />
                     </div>
                     <div className="card-actions">
-                        <button className="btn btn-neutral w-full"
+                        <button className="btn btn-accent w-full"
                             id="main-create-btn" onSubmit={handleFormSubmit}>
                         Create Account</button>
                         <div className="divider w-full">OR</div>
