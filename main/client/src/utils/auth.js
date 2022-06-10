@@ -23,12 +23,12 @@ class AuthToken{
 
     login(idToken){
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/');
+    window.location.assign('/home');
     }
 
     pinNumber(idToken){
         localStorage.setItem('id_token', idToken);
-        window.location.assign('/');
+        window.location.assign('/messages');
         }
 
     logout(){

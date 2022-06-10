@@ -5,6 +5,7 @@ import Messages from './pages/Landing';
 import CreateUserForm from './components/CreateAccountForm';
 import Profile from './pages/Profile';
 import FriendSearch from './pages/FriendSearchResults';
+import PinForm from './components/PinForm';
 import Navbar from './components/Navbar';
 import './App.css';
 import  LoginForm  from './components/LoginForm';
