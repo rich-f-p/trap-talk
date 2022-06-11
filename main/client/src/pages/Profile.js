@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import avatar from "../images/traptalk-avatar.png"
+import friends from "../images/traptalk-friends.png"
 
 
 
@@ -21,15 +22,23 @@ const Profile = () => {
                 <figure><img src={avatar} alt="Avatar" /></figure>
             </div>
 
-            <div class="card w-96 bg-base-100 shadow-xl">
+            {/* <div class="card w-96 bg-base-100 shadow-xl">
                 <figure class="px-10 pt-10">
-                    <img src='' alt="Friends" class="rounded-xl" />
+                    <img src={friends} alt="Friends" class="rounded-xl" />
                 </figure>
                 <div class="card-body items-center text-center">
                     <h2 class="card-title">My Friends</h2>
                     <p></p>
                     <div class="card-actions">
-                        
+                    </div>
+                </div>
+            </div> */}
+            <div class="card w-96 bg-neutral text-neutral-content">
+                <div class="card-body items-center text-center">
+    
+                    <img src={friends} alt="Friends" class="rounded-xl" />
+                
+                    <div class="card-actions justify-end">
                     </div>
                 </div>
             </div>

@@ -45,7 +45,7 @@ const LoginForm = () => {
     };
 
     return(
-        <form onSubmit={handleFormSubmit}>
+
         <div id="login-form" className="w-full flex justify-center mt-50">
             <div className="card w-96 bg-base-100 shadow-xl flex justify-center">
                 <div className="card-body">
@@ -86,14 +86,14 @@ const LoginForm = () => {
                         Login</button>
                         <div className="divider w-full">OR</div>
                         <Link to='/createAccount' className="btn btn-secondary w-full">
-                        <button id="create-btn" onClick={<Link to='/createAccount'></Link>} >Create
+                        <button id="create-btn">Create
                             Account</button>
                         </Link>
                     </div>
                 </div>
             </div>
         </div>
-    </form>
+
     );
 }
 
