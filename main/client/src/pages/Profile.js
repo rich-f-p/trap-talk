@@ -13,16 +13,16 @@ const Profile = () => {
 
     return (
         <><Navbar />
-
-            <div className="card flex place-items-center w-96 h-96 bg-base-100 shadow-xl">
-                <div className="card-body flex place-content-center">
-                    <h2 className="card-title">My Profile</h2>
-                    <p></p>
+            <div className="grid grid-cols-3">
+                <div className="card w-80 h-80 bg-base-100 shadow-xl col-start-2 col-span-2">
+                    <div className="card-body ">
+                        <h2 className="card-title">My Profile</h2>
+                        <p></p>
+                    </div>
+                    <figure><img className='w-3/4 'src={avatar} alt="Avatar" /></figure>
                 </div>
-                <figure><img src={avatar} alt="Avatar" /></figure>
-            </div>
 
-            {/* <div class="card w-96 bg-base-100 shadow-xl">
+                {/* <div class="card w-96 bg-base-100 shadow-xl">
                 <figure class="px-10 pt-10">
                     <img src={friends} alt="Friends" class="rounded-xl" />
                 </figure>
@@ -33,12 +33,13 @@ const Profile = () => {
                     </div>
                 </div>
             </div> */}
-            <div class="card w-96 bg-neutral text-neutral-content">
-                <div class="card-body items-center text-center">
-    
-                    <img src={friends} alt="Friends" class="rounded-xl" />
-                
-                    <div class="card-actions justify-end">
+                <div class="card w-96 bg-neutral text-neutral-content">
+                    <div class="card-body items-center text-center">
+
+                        <img src={friends} alt="Friends" class="rounded-xl" />
+
+                        <div class="card-actions justify-end">
+                        </div>
                     </div>
                 </div>
             </div>
