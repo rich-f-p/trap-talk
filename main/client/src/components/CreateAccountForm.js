@@ -96,7 +96,9 @@ const CreateUserForm = () => {
                             id="main-create-btn" onSubmit={handleFormSubmit}>
                         Create Account</button>
                         <div className="divider w-full">OR</div>
-                        <button id="login-btn" className="btn btn-secondary w-full">Login</button>
+                        <Link to='/' className="btn btn-secondary w-full">
+                        <button id="login-btn">Login</button>
+                        </Link>
                     </div>
                 </div>
             </div>

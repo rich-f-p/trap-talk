@@ -83,7 +83,7 @@ const LoginForm = () => {
                         Login</button>
                         <div className="divider w-full">OR</div>
                         <Link to='/createAccount' className="btn btn-secondary w-full">
-                        <button id="create-btn" onClick={<Link to='/createAccount'></Link>}>Create
+                        <button id="create-btn">Create
                             Account</button>
                         </Link>
                     </div>
