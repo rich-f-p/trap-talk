@@ -13,7 +13,7 @@ const Profile = () => {
     return (
         <><Navbar />
 
-            <div className="card flex place-items-center w-96 bg-base-100 shadow-xl">
+            <div className="card flex place-items-center w-96 h-96 bg-base-100 shadow-xl">
                 <div className="card-body flex place-content-center">
                     <h2 className="card-title">My Profile</h2>
                     <p></p>
