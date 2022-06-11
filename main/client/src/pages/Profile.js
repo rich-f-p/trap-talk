@@ -6,6 +6,7 @@ import friends from "../images/traptalk-friends.png"
 
 
 
+
 const Profile = () => {
 
 
@@ -19,29 +20,45 @@ const Profile = () => {
                         <h2 className="card-title">My Profile</h2>
                         <p></p>
                     </div>
-                    <figure><img className='w-3/4 'src={avatar} alt="Avatar" /></figure>
+                    <figure><img className='w-/4 ' src={avatar} alt="Avatar" /></figure>
                 </div>
+            </div>
 
-                {/* <div class="card w-96 bg-base-100 shadow-xl">
-                <figure class="px-10 pt-10">
-                    <img src={friends} alt="Friends" class="rounded-xl" />
-                </figure>
-                <div class="card-body items-center text-center">
-                    <h2 class="card-title">My Friends</h2>
-                    <p></p>
-                    <div class="card-actions">
-                    </div>
-                </div>
-            </div> */}
-                <div class="card w-96 bg-neutral text-neutral-content">
-                    <div class="card-body items-center text-center">
-
-                        <img src={friends} alt="Friends" class="rounded-xl" />
-
-                        <div class="card-actions justify-end">
-                        </div>
-                    </div>
-                </div>
+            <div class="overflow-x-auto">
+                <table class="table w-96">
+                    {/* <!-- head --> */}
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Friends</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {/* <!-- row 1 --> */}
+                        <tr>
+                            <th>1</th>
+                            <td>Cy Ganderton</td>
+                            <td>Quality Control Specialist</td>
+                            <td>Blue</td>
+                        </tr>
+                        {/* <!-- row 2 --> */}
+                        <tr>
+                            <th>2</th>
+                            <td>Hart Hagerty</td>
+                            <td>Desktop Support Technician</td>
+                            <td>Purple</td>
+                        </tr>
+                        {/* <!-- row 3 --> */}
+                        <tr>
+                            <th>3</th>
+                            <td>Brice Swyre</td>
+                            <td>Tax Accountant</td>
+                            <td>Red</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </>
 

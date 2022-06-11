@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { loginUser } from '../utils/API';
 import Auth from '../utils/auth';
+import logo from '../images/traptalk-transparent.png'
 
 const LoginForm = () => {
     const [userFormData, setUserFormData] = useState({ username: '', password: '' });
@@ -46,7 +47,7 @@ const LoginForm = () => {
 
     return(
 
-        <div id="login-form" className="w-full flex justify-center mt-50">
+        <><div id="login-form" className="w-full flex justify-center mt-50">
             <div className="card w-96 bg-base-100 shadow-xl flex justify-center">
                 <div className="card-body">
                     <h2 className="card-title">Login</h2>
@@ -62,8 +63,7 @@ const LoginForm = () => {
                             onChange={handleInputChange}
                             value={userFormData.username}
                             required
-                            className="input input-bordered w-full max-w-xs"
-                        />
+                            className="input input-bordered w-full max-w-xs" />
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
@@ -77,22 +77,25 @@ const LoginForm = () => {
                             onChange={handleInputChange}
                             value={userFormData.password}
                             required
-                            className="input input-bordered w-full max-w-xs"
-                        />
+                            className="input input-bordered w-full max-w-xs" />
                     </div>
                     <div className="card-actions">
                         <button className="btn btn-neutral w-full"
                             id="main-login-btn" onClick={(e) => handleFormSubmit(e)}>
-                        Login</button>
+                            Login</button>
                         <div className="divider w-full">OR</div>
                         <Link to='/createAccount' className="btn btn-secondary w-full">
-                        <button id="create-btn">Create
-                            Account</button>
+                            <button id="create-btn">Create
+                                Account</button>
                         </Link>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <div className='flex justify-center'>
+            <img src={logo} className='w-72 h-72 ' alt='logo'></img>
+        </div></>
 
     );
 }
