@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { 
+    getMe,
     receiveMessage,
     sendMessage} from '../utils/API';
 import Auth from '../utils/auth';
@@ -16,11 +17,12 @@ const Messages = () =>{
         const realUserData = async () =>{
             try{
                 const token = Auth.pinNumber() ? Auth.getToken() : null;
+                //const token = Auth.getToken(); //code for testing
 
                 if (!token) {
                 return false;
                 }
-                const response = await receiveMessage(token);
+                const response = await getMe(token);
                 if(!response.ok){
                     throw new Error('Access Denied');
                 }
@@ -31,6 +33,7 @@ const Messages = () =>{
             }
            };
            realUserData();
+           console.log(userData);
     }, [userDataLength, messageDataLength])
 
     const handleClick = async (messageId) => {
@@ -61,14 +64,14 @@ return (
                     <tbody className="hover" /* onClick={handleClick('passthinghere')} */>
 
                     {/* create a new one for each friend */}
-                   {/*  {userData.friends.map((fri) =>{
+                     { userData.friends!=undefined && userData.friends.map((fri, index) =>{
                         return (
-                            <tbody className="hover" onClick={handleClick('passthinghere')}><tr>
-                            <th>{fri._id}</th>
+                            <tr key={fri._id}>
+                            <th>{index}</th>
                             <td>{fri.username}</td>
-                            </tbody>
+                            </tr>
                         );
-                    })} */}
+                    })} 
                         <tr>
                             <th>2</th>
                             <td>Hart Hagerty</td>
