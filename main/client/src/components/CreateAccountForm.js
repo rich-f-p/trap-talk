@@ -47,7 +47,7 @@ const CreateUserForm = () => {
     <><div id="login-form" className="w-full flex justify-center mt-50">
       <div className="card w-96 bg-base-100 shadow-xl flex justify-center">
         <div className="card-body">
-          <h2 className="card-title">Create Account</h2>
+          <h2 className="card-title justify-center">Create Account</h2>
           <div className="form-control w-full max-w-xs">
             <label className="label">
               <span className="label-text">Username</span>

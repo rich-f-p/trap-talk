@@ -5,7 +5,8 @@ import friends from "../images/traptalk-friends.png"
 
 
 
-
+{/* <div className="grid grid-cols-3"></div>
+col-start-2 col-span-2 */}
 
 const Profile = () => {
 
@@ -14,13 +15,13 @@ const Profile = () => {
 
     return (
         <><Navbar />
-            <div className="grid grid-cols-3">
-                <div className="card w-80 h-80 bg-base-100 shadow-xl col-start-2 col-span-2">
+            <div className="flex justify-center">
+                <div className="card w-80 h-80 bg-base-100 shadow-xl">
                     <div className="card-body ">
-                        <h2 className="card-title">My Profile</h2>
+                        <h2 className="card-title justify-center">My Profile</h2>
                         <p></p>
                     </div>
-                    <figure><img className='w-/4 ' src={avatar} alt="Avatar" /></figure>
+                    <figure><img src={avatar} alt="Avatar" /></figure>
                 </div>
             </div>
 
