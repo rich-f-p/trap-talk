@@ -5,8 +5,8 @@ import Auth from '../utils/auth';
 
 const LoginForm = () => {
     const [userFormData, setUserFormData] = useState({ username: '', password: '' });
-    const [validated] = useState(false);
-    const [showAlert, setShowAlert] = useState(false);
+    // const [validated] = useState(false);
+    // const [showAlert, setShowAlert] = useState(false);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -15,6 +15,13 @@ const LoginForm = () => {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
         try {
             const response = await loginUser(userFormData);
 
@@ -27,7 +34,7 @@ const LoginForm = () => {
             Auth.login(token);
         } catch (err) {
             console.error(err);
-            setShowAlert(true);
+            
         }
 
         setUserFormData({
@@ -48,6 +55,10 @@ const LoginForm = () => {
                             id="username-login"
                             type="text"
                             placeholder="Type here"
+                            name='username'
+                            onChange={handleInputChange}
+                            value={userFormData.username}
+                            required
                             className="input input-bordered w-full max-w-xs"
                         />
                     </div>
@@ -59,6 +70,10 @@ const LoginForm = () => {
                             id="password-login"
                             type="password"
                             placeholder="Type here"
+                            name='password'
+                            onChange={handleInputChange}
+                            value={userFormData.password}
+                            required
                             className="input input-bordered w-full max-w-xs"
                         />
                     </div>
@@ -68,7 +83,7 @@ const LoginForm = () => {
                         Login</button>
                         <div className="divider w-full">OR</div>
                         <Link to='/createAccount' className="btn btn-secondary w-full">
-                        <button id="create-btn">Create
+                        <button id="create-btn" onClick={<Link to='/createAccount'></Link>}>Create
                             Account</button>
                         </Link>
                     </div>
