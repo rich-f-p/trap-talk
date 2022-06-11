@@ -5,6 +5,8 @@ import friends from "../images/traptalk-friends.png"
 
 
 
+{/* <div className="grid grid-cols-3"></div>
+col-start-2 col-span-2 */}
 
 const Profile = () => {
 
@@ -13,34 +15,51 @@ const Profile = () => {
 
     return (
         <><Navbar />
-
-            <div className="card flex place-items-center w-96 h-96 bg-base-100 shadow-xl">
-                <div className="card-body flex place-content-center">
-                    <h2 className="card-title">My Profile</h2>
-                    <p></p>
+            <div className="flex justify-center">
+                <div className="card w-80 h-80 bg-base-100 shadow-xl">
+                    <div className="card-body ">
+                        <h2 className="card-title justify-center">My Profile</h2>
+                        <p></p>
+                    </div>
+                    <figure><img src={avatar} alt="Avatar" /></figure>
                 </div>
-                <figure><img src={avatar} alt="Avatar" /></figure>
             </div>
 
-            {/* <div class="card w-96 bg-base-100 shadow-xl">
-                <figure class="px-10 pt-10">
-                    <img src={friends} alt="Friends" class="rounded-xl" />
-                </figure>
-                <div class="card-body items-center text-center">
-                    <h2 class="card-title">My Friends</h2>
-                    <p></p>
-                    <div class="card-actions">
-                    </div>
-                </div>
-            </div> */}
-            <div class="card w-96 bg-neutral text-neutral-content">
-                <div class="card-body items-center text-center">
-    
-                    <img src={friends} alt="Friends" class="rounded-xl" />
-                
-                    <div class="card-actions justify-end">
-                    </div>
-                </div>
+            <div class="overflow-x-auto">
+                <table class="table w-96">
+                    {/* <!-- head --> */}
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Friends</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {/* <!-- row 1 --> */}
+                        <tr>
+                            <th>1</th>
+                            <td>Cy Ganderton</td>
+                            <td>Quality Control Specialist</td>
+                            <td>Blue</td>
+                        </tr>
+                        {/* <!-- row 2 --> */}
+                        <tr>
+                            <th>2</th>
+                            <td>Hart Hagerty</td>
+                            <td>Desktop Support Technician</td>
+                            <td>Purple</td>
+                        </tr>
+                        {/* <!-- row 3 --> */}
+                        <tr>
+                            <th>3</th>
+                            <td>Brice Swyre</td>
+                            <td>Tax Accountant</td>
+                            <td>Red</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </>
 
