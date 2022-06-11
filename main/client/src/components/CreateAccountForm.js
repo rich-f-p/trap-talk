@@ -5,7 +5,7 @@ import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
 
 const CreateUserForm = () => {
-  const [userFormData, setUserFormData] = useState({ username: '', password: '' });
+  const [userFormData, setUserFormData] = useState({ username: '', password: '', pin: '' });
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -38,6 +38,7 @@ const CreateUserForm = () => {
     setUserFormData({
       username: '',
       password: '',
+      pin: ''
     });
   };
 
@@ -91,9 +92,24 @@ const CreateUserForm = () => {
                             className="input input-bordered w-full max-w-xs"
                         />
                     </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">4-Digit Pin</span>
+                        </label>
+                        <input
+                            id="password-login"
+                            type="password"
+                            name='pin'
+                            onChange={handleInputChange}
+                            value={userFormData.pin}
+                            required
+                            placeholder="Type here"
+                            className="input input-bordered w-full max-w-xs"
+                        />
+                    </div>
                     <div className="card-actions">
                         <button className="btn btn-accent w-full"
-                            id="main-create-btn" onSubmit={handleFormSubmit}>
+                            id="main-create-btn" onClick={handleFormSubmit}>
                         Create Account</button>
                         <div className="divider w-full">OR</div>
                         <Link to='/' className="btn btn-secondary w-full">
