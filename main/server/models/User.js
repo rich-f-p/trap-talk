@@ -35,6 +35,10 @@ userSchema.pre('save', async function (next) {
     next();
   });
 
+  userSchema.methods.isCorrectPassword = async function (password) {
+    return bcrypt.compare(password, this.password);
+  };
+
 userSchema.virtual('friendCount').get(function(){
     if(this.friends.length !== undefined){
     return this.friends.length;

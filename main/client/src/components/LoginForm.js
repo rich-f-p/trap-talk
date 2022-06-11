@@ -36,13 +36,16 @@ const LoginForm = () => {
             console.error(err);
             
         }
+        console.log(userFormData)
 
         setUserFormData({
             username: '',
             password: '',
         });
     };
-    return (
+
+    return(
+
         <div id="login-form" className="w-full flex justify-center mt-50">
             <div className="card w-96 bg-base-100 shadow-xl flex justify-center">
                 <div className="card-body">
@@ -79,7 +82,7 @@ const LoginForm = () => {
                     </div>
                     <div className="card-actions">
                         <button className="btn btn-neutral w-full"
-                            id="main-login-btn" onClick={() => handleFormSubmit()}>
+                            id="main-login-btn" onClick={(e) => handleFormSubmit(e)}>
                         Login</button>
                         <div className="divider w-full">OR</div>
                         <Link to='/createAccount' className="btn btn-secondary w-full">
@@ -90,7 +93,9 @@ const LoginForm = () => {
                 </div>
             </div>
         </div>
+
     );
 }
+
 
 export default LoginForm;

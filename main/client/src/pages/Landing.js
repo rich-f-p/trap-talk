@@ -7,6 +7,7 @@ import Auth from '../utils/auth';
 const Messages = () =>{
     const [userData,setUserData] = useState({});
     const [messageData,setMessageData] = useState({});
+    const [textInput, setTextInput] = useState('');
 
     const userDataLength = Object.keys(userData).length;
     const messageDataLength = Object.keys(messageData).length;
@@ -54,16 +55,40 @@ const Messages = () =>{
 
 return (
     <>
-    <div class="card lg:card-side bg-base-100 shadow-xl">
-      <figure></figure>
-      <div class="card-body">
-        <h2 class="card-title">New album is released!</h2>
-        <p>Click the button to listen on Spotiwhy app.</p>
-        <div class="card-actions justify-end">
-          <button class="btn btn-primary">Listen</button>
+        <div className='grid lg:grid-cols-3 mt-6 '>
+            <div className='overflow-auto overflow-x-auto w-full max-h-80 mr-1 border-double border-4'>
+                <table className='table w-full'>
+                    <tbody className="hover" /* onClick={handleClick('passthinghere')} */>
+
+                    {/* create a new one for each friend */}
+                   {/*  {userData.friends.map((fri) =>{
+                        return (
+                            <tbody className="hover" onClick={handleClick('passthinghere')}><tr>
+                            <th>{fri._id}</th>
+                            <td>{fri.username}</td>
+                            </tbody>
+                        );
+                    })} */}
+                        <tr>
+                            <th>2</th>
+                            <td>Hart Hagerty</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div className='lg:col-start-2 lg:col-span-2 border-double border-4'>
+                <div className="overflow-auto h-80 border-dotted border-2">
+                    <div className="card-body">
+                        <h2 className="card-title">Shoes!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                    </div>
+                </div>
+                <div className="input-group">
+                    <input type="text" placeholder="Search…" className="input input-bordered w-full" />
+                    <button className="btn btn-square">send</button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
     </>
 );
 }
