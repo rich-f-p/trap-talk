@@ -12,7 +12,7 @@ function Navbar() {
             </div>
             <div class="flex-none">
                 <ul class="menu menu-horizontal p-0">
-                    <li><Link to="/messages">Home</Link></li>
+                    <li><Link to="/search">Search Friends</Link></li>
                     <li><Link to="/profile">Profile</Link></li>
                     <button className="btn btn-ghost"><li>Logout</li></button>
                 </ul>
