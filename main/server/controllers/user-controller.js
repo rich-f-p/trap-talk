@@ -60,6 +60,20 @@ module.exports = {
             return res.status(400).json(err);
         }
     },
+
+    async addConvoByUser({user,body,params},res){
+        try{
+            const updateCon = await User.findOneAndUpdate(
+                {username:params.user,friends:{"$elemMatch":{"username":params.friend }}},
+                {$push: {"friends.$.convo":body}},
+                {new:true,select:{friends:{$elemMatch:{'username': params.friend}}}}
+            );
+            return res.json(updateCon);
+        }catch(err){
+            console.log(err);
+            return res.status(400).json(err);
+        }
+    },
     async allUsers(req,res){
         const user = await User.find();
         if (!user){
@@ -71,7 +85,7 @@ module.exports = {
         try{
             const grab = await User.find(
                 {username: params.user,friends:{"$elemMatch":{"_id":params._id }}},
-                {'friends.convo.$': 1},
+                {'friends.convo.$': 1, 'friends.username': 1},
             );
             return res.json(grab);
         }catch(err){

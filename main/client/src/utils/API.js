@@ -69,4 +69,15 @@ export const loginUser = (userData) => {
       //body: JSON.stringify(data),
     });
   };
+
+  export const userSendMessage = (user,friend,token,data) =>{
+    return fetch(`/api/users/send/${user}/${friend}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(data),
+    });
+  };
   
