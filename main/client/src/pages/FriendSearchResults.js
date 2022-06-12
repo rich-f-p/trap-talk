@@ -1,33 +1,26 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import logo from '../images/traptalk-transparent.png';
 
 function FriendSearch() {
     return (
         <div class="navbar bg-base-100">
-            <div class="flex-1">
-                <a class="btn btn-ghost normal-case text-xl">Search for Friends</a>
+             <div class="flex-1">
+                <button className="btn btn-ghost" onClick={<Link to='/messages'></Link>}><img alt='logo' className='h-16' src={logo}></img></button>
+            </div>
+            <div>
+                <button className="btn btn-ghost">Search for Friends</button>
             </div>
             <div class="flex-none gap-2">
                 <div class="form-control">
-                    <input type="text" placeholder="Search" class="input input-bordered" />
+                    <input type="text" placeholder="Search" className="input input-bordered w-96" />
                 </div>
-                <div class="dropdown dropdown-end">
-                    <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                        <div class="w-10 rounded-full">
-                            <img src="https://api.lorem.space/image/face?hash=33791" />
-                        </div>
-                    </label>
-                    <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-                        <li>
-                            <a class="justify-between">
-                                Profile
-                                <span class="badge">New</span>
-                            </a>
-                        </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
-                    </ul>
-                </div>
+                <div class="flex-none">
+                <ul class="menu menu-horizontal p-0">
+                    <li><Link to="/profile">Profile</Link></li>
+                    <button className="btn btn-ghost"><li>Logout</li></button>
+                </ul>
+            </div>
             </div>
         </div>
     )
