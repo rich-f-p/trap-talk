@@ -21,6 +21,8 @@ router.route('/login').post(login);
 
 //both of these get a single user 
 router.route('/single/:id').get(singleUser);
+
+router.route('/search/:username').get(singleUser)
 //above gets a user by id
 router.route('/me').get(authMiddleware, singleUser);
 // gets a user through token
