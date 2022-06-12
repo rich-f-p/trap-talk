@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../components/Navbar';
 import { 
     getMe,
     receiveMessage,
@@ -106,7 +107,7 @@ const Messages = () =>{
     }
 
 return (
-    <>
+    <><Navbar/>
         <div className='grid lg:grid-cols-3 mt-6 '>
             <div className='overflow-auto overflow-x-auto w-full max-h-80 mr-1 border-double border-4'>
                 <table className='table w-full'>
