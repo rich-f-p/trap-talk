@@ -58,4 +58,15 @@ export const loginUser = (userData) => {
       body: JSON.stringify(messageData),
     });
   };
+
+  export const thisMessage = (user,data,token) => {
+    return fetch(`/api/users/message/${user}/${data}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${token}`,
+      },
+      //body: JSON.stringify(data),
+    });
+  };
   

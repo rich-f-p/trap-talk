@@ -6,7 +6,7 @@ const friendSchema = new Schema({
     username:{ 
         type: String,
         required: true,
-        unique: true,
+        unique: false,
     },
     convo:[conversationSchema],
     request:{

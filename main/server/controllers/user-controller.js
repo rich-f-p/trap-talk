@@ -66,5 +66,17 @@ module.exports = {
             return res.status(400).json({message:'no users'});
         }
         res.status(200).json(user);
+    },
+    async getConvo({body,params}, res){
+        try{
+            const grab = await User.find(
+                {username: params.user,friends:{"$elemMatch":{"_id":params._id }}},
+                {'friends.convo.$': 1},
+            );
+            return res.json(grab);
+        }catch(err){
+            console.log(err);
+            return res.status(400).json(err);
+        }
     }
 }

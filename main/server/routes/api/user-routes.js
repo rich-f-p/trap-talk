@@ -6,7 +6,8 @@ const {
     login,
     saveFriend,
     addConvo,
-    allUsers
+    allUsers,
+    getConvo
 } = require('../../controllers/user-controller');
 const { authMiddleware} = require('../../utils/auth');
 //test http://localhost:3001/api/users/
@@ -24,7 +25,7 @@ router.route('/single/:id').get(singleUser);
 router.route('/me').get(authMiddleware, singleUser);
 // gets a user through token
 
-router.route('/message/:user/:_id/').put(addConvo);
+router.route('/message/:user/:_id/').put(addConvo).get(getConvo);
 
 router.route('/all').get(allUsers);
 
