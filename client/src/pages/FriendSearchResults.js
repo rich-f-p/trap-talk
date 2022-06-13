@@ -80,6 +80,7 @@ function FriendSearch() {
         try{
             const response = await searchUser(user, token)
             if(!response.ok){
+                alert('no user with that name')
                 throw new Error('Error with adding');
             }
             const list = await response.json();
@@ -98,17 +99,17 @@ function FriendSearch() {
 
 
     return (
-        <div>
-        <div className="navbar bg-base-100">
-            <div className="flex-1">
-                <button className="btn btn-ghost" onClick={<Link to='/messages'></Link>}><img alt='logo' className='h-16' src={logo}></img></button>
+        <div className="container mx-auto">
+        <div className="navbar bg-base-100 mb-5">
+            <div className="flex">
+                <button className="btn btn-ghost"><Link to='/messages'><img alt='logo' className='h-16' src={logo}></img></Link></button>
             </div>
             <div>
                 <button className="btn btn-ghost" onClick={(e) => searchBtn(search.user,e)}>Search for Friends</button>
             </div>
             <div className="flex-none gap-2">
                 <div className="form-control">
-                    <input type="text" name='user' onChange={handleInputChange} value={search.user} placeholder="Search" className="input input-bordered w-96" />
+                    <input type="text" name='user' onChange={handleInputChange} value={search.user} placeholder="Search" className="input input-bordered lg:w-96 " />
                 </div>
                 <div className="flex-none">
                     <ul className="menu menu-horizontal p-0">
@@ -118,16 +119,18 @@ function FriendSearch() {
                 </div>
             </div>
         </div>
-        <table className='table w-full'>
-                <tbody>
-                    {display.username!=undefined ?
-                            <tr>
-                                <th>{display.username}</th>
-                                <td><button className="btn btn-ghost" onClick={(e) => handleAdd({username:display.username, request: true },e)} >add to friends</button></td>
-                            </tr>: <p>search</p>
-                    } 
-                </tbody>
-            </table>
+            <div className="flex justify-center mt-5">
+                {display.username != undefined ?
+                    <div class="card w-96 bg-neutral text-neutral-content">
+                        <div class="card-body items-center text-center">
+                            <h2 className="card-title">{display.username}</h2>
+                            <div class="card-actions justify-end"></div>
+                            <button className="btn btn-primary" onClick={(e) => handleAdd({ username: display.username, request: true }, e)} >add to friends</button>
+                        </div>
+                    </div> : <p>Search...</p>
+                }
+
+            </div>
         </div>
     )
 };
