@@ -5,7 +5,7 @@ import logo from '../images/traptalk-transparent.png';
 function FriendSearch() {
     return (
         <div class="navbar bg-base-100">
-             <div class="flex-1">
+            <div class="flex-1">
                 <button className="btn btn-ghost" onClick={<Link to='/messages'></Link>}><img alt='logo' className='h-16' src={logo}></img></button>
             </div>
             <div>
@@ -16,11 +16,20 @@ function FriendSearch() {
                     <input type="text" placeholder="Search" className="input input-bordered w-96" />
                 </div>
                 <div class="flex-none">
-                <ul class="menu menu-horizontal p-0">
-                    <li><Link to="/profile">Profile</Link></li>
-                    <button className="btn btn-ghost"><li>Logout</li></button>
-                </ul>
+                    <ul class="menu menu-horizontal p-0">
+                        <li><Link to="/profile">Profile</Link></li>
+                        <button className="btn btn-ghost"><li>Logout</li></button>
+                    </ul>
+                </div>
             </div>
+            <div>
+                <tbody>
+                    { userData.username!=undefined && userData.username.map((data,index) => {
+                        return (
+
+                        );
+                    })}
+                </tbody>
             </div>
         </div>
     )
