@@ -21,7 +21,7 @@ function App() {
         <Switch>  
           <Route exact path='/' component={LoginForm} />
           <Route exact path='/createAccount' component={CreateUserForm} />
-          <Route exact path='/home' component={DecoyMessage} />
+          <Route exact path='/home' component={PinForm} />
           <Route exact path='/messages' component={Messages} />
           <Route exact path='/profile' component={Profile} />
           <Route exact path='/search' component={FriendSearch} />
