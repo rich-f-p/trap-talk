@@ -27,7 +27,7 @@ This application has the ability to send and receive messages and add and remove
 
 ## Installation 🛠️
 
-Deployed Link: 
+Deployed Link: https://arcane-escarpment-44917.herokuapp.com/
 
 In order to install this application on your local machine, navigate to the code repo [here](https://github.com/Sophtron5000/trap-talk). Fork the repo, copy the SSH link, and clone it down to your local machine using the `git clone` command in your terminal. 
 

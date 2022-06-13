@@ -105,11 +105,11 @@ function FriendSearch() {
                 <button className="btn btn-ghost"><Link to='/messages'><img alt='logo' className='h-16' src={logo}></img></Link></button>
             </div>
             <div>
-                <button className="btn btn-ghost" onClick={(e) => searchBtn(search.user,e)}>Search for Friends</button>
+                <button className="btn btn-secondary " onClick={(e) => searchBtn(search.user,e)}>Search for Friends</button>
             </div>
             <div className="flex-none gap-2">
                 <div className="form-control">
-                    <input type="text" name='user' onChange={handleInputChange} value={search.user} placeholder="Search" className="input input-bordered lg:w-96 " />
+                    <input type="text" name='user' onChange={handleInputChange} value={search.user} placeholder="Search" className="input input-bordered lg:w-96" />
                 </div>
                 <div className="flex-none">
                     <ul className="menu menu-horizontal p-0">
