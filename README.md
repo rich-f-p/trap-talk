@@ -39,6 +39,20 @@ Then run `npm run develop` to start the app.
 
 ## Technologies 🔧
 
+### Front End
+
+* Tailwind CSS
+* daisyUI
+* React
+
+### Back End
+
+* Express.js
+* NPM
+* Node.js
+* MongoDB
+
+
 ## Notable Features ⚡️
 
 ## Contributors 🙌
@@ -50,3 +64,5 @@ Then run `npm run develop` to start the app.
 **Sophia Custodia** - [LinkedIn](https://www.linkedin.com/in/sophia-custodia/) - [GitHub](https://github.com/Sophtron5000) - [Email](sophtron@gmail.com)
 
 ## License 🔑
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
