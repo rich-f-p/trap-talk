@@ -76,7 +76,7 @@ const PinForm = () => {
 
     <div class="card lg:card-side bg-base-100 shadow-xl m-5">
       <figure></figure>
-        <h2 class="card-title">From: </h2>
+        <h2 class="card-title">From: jerome_luvs_farley</h2>
         <p>Message: Hey, what you up to?</p>
         <div class="card-body">
           <label for="my-modal-3" class="btn btn-ghost btn-xs modal-button max-w-fit">Sent yesterday</label>
@@ -102,7 +102,7 @@ const PinForm = () => {
     value={userFormData.pin}
     required
     class="input input-bordered w-full max-w-xs" />                       
-    <input type="submit" onClick={(e) => handleFormSubmit(e)} value="Go" class="btn btn-sm" />
+    <input type="submit" onClick={(e) => handleFormSubmit(e)} value="Go" class="btn btn-sm ml-5" />
   </div>
 </div>
         </>

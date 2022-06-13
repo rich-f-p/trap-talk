@@ -104,13 +104,9 @@ function FriendSearch() {
             <div className="flex-1">
                 <button className="btn btn-ghost"><Link to='/messages'><img alt='logo' className='h-16' src={logo}></img></Link></button>
             </div>
-            <div>
-                <button className="btn btn-secondary " onClick={(e) => searchBtn(search.user,e)}>Search for Friends</button>
-            </div>
+            
             <div className="flex-none gap-2">
-                <div className="form-control">
-                    <input type="text" name='user' onChange={handleInputChange} value={search.user} placeholder="Search" className="input input-bordered lg:w-96" />
-                </div>
+               
                 <div className="flex-none">
                     <ul className="menu menu-horizontal p-0">
                         <li><Link to="/profile">Profile</Link></li>
@@ -119,6 +115,14 @@ function FriendSearch() {
                 </div>
             </div>
         </div>
+        <div>
+            <div className= 'grid justify-items-center'>
+             <div className="form-control w-full max-w-xs">
+                    <input type="text" name='user' onChange={handleInputChange} value={search.user} placeholder="Search" className="input input-bordered lg:w-96  justify-center" />
+                </div>
+                <button className="btn btn-secondary align-item-center mt-5" onClick={(e) => searchBtn(search.user,e)}>Search for Friends</button>
+            </div>
+            </div>
             <div className="flex justify-center mt-5">
                 {display.username != undefined ?
                     <div class="card w-96 bg-neutral text-neutral-content">
@@ -127,7 +131,8 @@ function FriendSearch() {
                             <div class="card-actions justify-end"></div>
                             <button className="btn btn-primary" onClick={(e) => handleAdd({ username: display.username, request: true }, e)} >add to friends</button>
                         </div>
-                    </div> : <p>Search...</p>
+                    </div> : <p>No Friends</p>
+                    
                 }
 
             </div>
