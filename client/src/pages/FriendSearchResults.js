@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '../images/traptalk-transparent.png';
+import { getMe } from "../utils/API";
+import Auth from '../utils/auth';
 
 function FriendSearch() {
+    const [userData,setUserData] = useState({});
+    const userDataLength = Object.keys(userData).length;
+
+
     return (
         <div class="navbar bg-base-100">
             <div class="flex-1">
@@ -26,7 +32,8 @@ function FriendSearch() {
                 <tbody>
                     { userData.username!=undefined && userData.username.map((data,index) => {
                         return (
-
+                            <tr>
+                                <th>hi</th></tr>
                         );
                     })}
                 </tbody>
