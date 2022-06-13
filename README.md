@@ -13,6 +13,12 @@
 
 ## Description 📝
 
+Trap Talk is a secret messaging application that is protected by 2-step authentication. It is a app where you can message other users that you have added as a friend and know that your messages are protected, EVEN if your login credentials get into the wrong hands. 
+
+Your 4-digit pin is the key to revealing your real messages. If the user was to login with just username and password, a decoy landing page will be revealed with wholesome generic message. Only the real owner of the account will know where the easter egg on the page is to reveal the 4-digit pin modal to enter their pin and access the real messages.
+
+This application has the ability to send and receive messages and add and remove friends. It is designed to be accessible through desktop or mobile phone.
+
 ## Application Preview ⭐
 
 ## Installation 🛠️
