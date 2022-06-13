@@ -99,9 +99,9 @@ function FriendSearch() {
 
 
     return (
-        <div className="container mx-auto">
+        <div>
         <div className="navbar bg-base-100 mb-5">
-            <div className="flex">
+            <div className="flex-1">
                 <button className="btn btn-ghost"><Link to='/messages'><img alt='logo' className='h-16' src={logo}></img></Link></button>
             </div>
             <div>
