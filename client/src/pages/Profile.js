@@ -40,12 +40,12 @@ const Profile = () => {
     return (
         <><Navbar />
             <div className="justify-center -space-y-14">
-                <div class="hero min-h-screen" >
-                    <div class="hero-overlay bg-opacity-60"></div>
-                    <div class="hero-content text-center text-neutral-content">
-                        <div class="max-w-md">
-                            <h1 class="mb-5 text-5xl font-bold">Hello, {userData.username}!</h1>
-                            <p class="mb-5">Welcome to your profile!</p>
+                <div className="hero min-h-screen" >
+                    <div className="hero-overlay bg-opacity-60"></div>
+                    <div className="hero-content text-center text-neutral-content">
+                        <div className="max-w-md">
+                            <h1 className="mb-5 text-5xl font-bold">Hello, {userData.username}!</h1>
+                            <p className="mb-5">Welcome to your profile!</p>
                         </div>
                     </div>
                 </div>
@@ -63,8 +63,8 @@ const Profile = () => {
 
 
 
-                    <div class="overflow-x-auto lg:pl-96 ">
-                        <table class="table w-96">
+                    <div className="overflow-x-auto lg:pl-96 ">
+                        <table className="table w-96">
                             {/* <!-- head --> */}
                             <thead>
                                 <tr>
