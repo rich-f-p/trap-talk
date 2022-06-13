@@ -33,8 +33,8 @@ This application has the ability to send and receive messages and add and remove
 
 **Maya Morales** - [LinkedIn](https://www.linkedin.com/in/maya-morales-1191351bb/) - [GitHub](https://github.com/mayaimorales) - [Email](mayainomorales@gmail.com)
 
-**Richard Ferry** - [LinkedIn]() - [GitHub]() - [Email]()
+**Richard Ferry** - [LinkedIn](https://www.linkedin.com/in/richard-ferry-83120514b/) - [GitHub](https://github.com/rich-f-p) - [Email](richardfpro864@gmail.com)
 
-**Sophia Custodia** - [LinkedIn]() - [GitHub]() - [Email]()
+**Sophia Custodia** - [LinkedIn](https://www.linkedin.com/in/sophia-custodia/) - [GitHub](https://github.com/Sophtron5000) - [Email](sophtron@gmail.com)
 
 ## License 🔑
