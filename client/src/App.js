@@ -1,17 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import DecoyMessage from './pages/decoyLanding';
 import Messages from './pages/Landing';
 import CreateUserForm from './components/CreateAccountForm';
 import Profile from './pages/Profile';
 import FriendSearch from './pages/FriendSearchResults';
 import PinForm from './components/PinForm';
-import Navbar from './components/Navbar';
 import './App.css';
 import  LoginForm  from './components/LoginForm';
-
-
-// import Login from './pages/Login';
 
 function App() {
   return (
