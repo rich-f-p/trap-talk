@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import logo from '../images/traptalk-transparent.png';
+import Auth from '../utils/auth';
 
 
 
@@ -14,7 +15,7 @@ function Navbar() {
                 <ul class="menu menu-horizontal p-0">
                     <li><Link to="/search">Search Friends</Link></li>
                     <li><Link to="/profile">Profile</Link></li>
-                    <button className="btn btn-ghost"><li>Logout</li></button>
+                    <button className="btn btn-ghost" onClick={Auth.logout} ><li>Logout</li></button>
                 </ul>
             </div>
         </div>

@@ -31,6 +31,7 @@ const Messages = () =>{
                 const token = Auth.getToken(); //code for testing
 
                 if (!token) {
+                    Auth.logout();
                 return false;
                 }
                 const response = await getMe(token);
