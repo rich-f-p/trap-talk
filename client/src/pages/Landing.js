@@ -24,7 +24,7 @@ const Messages = () =>{
     useEffect(() => {
         const realUserData = async () =>{
             try{
-                const token = Auth.getToken(); //code for testing
+                const token = Auth.getToken(); 
 
                 if (!token) {
                     Auth.logout();

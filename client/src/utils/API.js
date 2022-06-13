@@ -80,4 +80,25 @@ export const loginUser = (userData) => {
       body: JSON.stringify(data),
     });
   };
+
+  export const addFriend = (user,body,token) =>{
+    return fetch(`/api/users/add/${user}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(body),
+    })
+  };
+
+  export const searchUser = (user,token) =>{
+    return fetch(`/api/users/search/${ user }`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${token}`,
+      },
+    })
+  }
   
