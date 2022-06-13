@@ -37,6 +37,14 @@ Then run `npm run develop` to start the app.
 
 ## Usage 💡
 
+When presented with the login screen, select the `create account` button to be directed to the create account form. Then create a user. The required credentials that will be requested are `username` `password` and `4-digit` pin. Once your account has been created you will be taken to a screen with a set of decoy messages.
+
+The only way to have access to the application is to enter your 4-digit pin at the trigger of the easter egg. The triggering easter egg feature is the text that says `sent yesterday` on one of the messages. When selected, the pin modal will appear where the pin can be entered and the user will be authenticated.
+
+The real messages screen will then display. If you are a new user, there should be no messages and no friends. You will be able to search and add friends by username and only once they add you will you be able to send and receive messages. 
+
+When done messaging, be sure to logout of the app to ensure messages are protected.
+
 ## Technologies 🔧
 
 ### Front End
