@@ -25,6 +25,8 @@ This application has the ability to send and receive messages and add and remove
 
 ## Application Preview ⭐
 
+![alt text](/client/src/images/Trap%20Talk.gif)
+
 ## Installation 🛠️
 
 Deployed Link: https://arcane-escarpment-44917.herokuapp.com/
