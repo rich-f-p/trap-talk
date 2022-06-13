@@ -55,6 +55,11 @@ Then run `npm run develop` to start the app.
 
 ## Notable Features ⚡️
 
+* 2-step authentication utilizing a 4-digit pin after credential entry
+* Decoy message landing page with special easter egg to trigger 4-digit pin modal
+* In-app messaging
+* Ability to add friends
+
 ## Contributors 🙌
 
 **Maya Morales** - [LinkedIn](https://www.linkedin.com/in/maya-morales-1191351bb/) - [GitHub](https://github.com/mayaimorales) - [Email](mayainomorales@gmail.com)
