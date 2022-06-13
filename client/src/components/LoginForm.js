@@ -6,8 +6,6 @@ import logo from '../images/traptalk-transparent.png'
 
 const LoginForm = () => {
     const [userFormData, setUserFormData] = useState({ username: '', password: '' });
-    // const [validated] = useState(false);
-    // const [showAlert, setShowAlert] = useState(false);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
