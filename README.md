@@ -1,6 +1,6 @@
 # Trap-Talk 💬
 
-![alt text]('main/client/src/components/images/traptalk-transparent.png)
+![alt text](/client/src/images/traptalk-yellow.png)
 
 
 
