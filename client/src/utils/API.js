@@ -37,28 +37,6 @@ export const loginUser = (userData) => {
     });
   };
 
-  export const sendMessage = (messageData, token) => {
-    return fetch('/api/users', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(messageData),
-    });
-  };
-
-  export const receiveMessage = (messageData, token) => {
-    return fetch('/api/users', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(messageData),
-    });
-  };
-
   export const thisMessage = (user,data,token) => {
     return fetch(`/api/users/message/${user}/${data}`, {
       method: 'GET',
@@ -66,7 +44,6 @@ export const loginUser = (userData) => {
         'content-type': 'application/json',
         authorization: `Bearer ${token}`,
       },
-      //body: JSON.stringify(data),
     });
   };
 

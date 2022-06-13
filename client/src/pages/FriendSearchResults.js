@@ -7,7 +7,6 @@ import Auth from '../utils/auth';
 function FriendSearch() {
     const [userData,setUserData] = useState({});
     const userDataLength = Object.keys(userData).length;
-    //const [addData,setAddData] = useState({});
     const [search,setSearch] = useState({});
     const [display,setDisplay] = useState({});
     let holdData = {};
