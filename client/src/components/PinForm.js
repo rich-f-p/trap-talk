@@ -1,45 +1,51 @@
-import React, { useState } from 'react';
-import { showMessages } from '../utils/API';
+import React, { useState, useEffect } from 'react';
+import { getMe } from '../utils/API';
 import Auth from '../utils/auth';
 
 const PinForm = () => {
-    const [userFormData, setUserFormData] = useState({ pin: '' });
-    // const [validated] = useState(false);
-    // const [showAlert, setShowAlert] = useState(false);
+    const [userFormData, setUserFormData] = useState({});
+    const [pinData,setPinData] = useState({});
+    const pinDataLength = Object.keys(pinData).length;
+
+    useEffect(() =>{
+      const grabPinData = async () =>{
+          try{
+              const token = Auth.getToken();
+              if(!token){
+                  Auth.logout();
+                  return false;
+              }
+              const response = await getMe(token);
+              if(!response.ok){
+                  throw new Error('Access Denied');
+              }
+              const pin = await response.json();
+              setPinData({pin:`${pin.pin}`})
+              console.log(pin.pin)
+          }catch(err){
+              console.log(err);
+          }
+      };
+      grabPinData();
+  },[pinDataLength])
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setUserFormData({ ...userFormData, [name]: value });
-        console.log(userFormData)
     };
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-
-        const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-
-        try {
-            const response = await showMessages(userFormData);
-
-            if (!response.ok) {
-                throw new Error('something went wrong!');
+            if(userFormData.pin === pinData.pin){
+              window.location.assign('/messages');
+            }else{
+              console.log('wrong pin')
             }
-
-            const { token, user } = await response.json();
-            console.log(user);
-            Auth.pin(token);
-        } catch (err) {
-            console.error(err);
-        }
-
         setUserFormData({
             pin: ''
         });
     };
+
     return (
         <>
          <div class="card lg:card-side bg-base-100 shadow-xl m-5 w-">
@@ -96,7 +102,7 @@ const PinForm = () => {
     value={userFormData.pin}
     required
     class="input input-bordered w-full max-w-xs" />                       
-    <input type="submit" onClick={handleFormSubmit} value="Go" class="btn btn-sm" />
+    <input type="submit" onClick={(e) => handleFormSubmit(e)} value="Go" class="btn btn-sm" />
   </div>
 </div>
         </>

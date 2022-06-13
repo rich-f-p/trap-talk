@@ -18,16 +18,12 @@ const Messages = () =>{
     let reciever = '';// holds a name 
     let sender = userData.username
 
-
     const userDataLength = Object.keys(userData).length;
     const messageDataLength = Object.keys(messageData).length;
-    //const contentLength = Object.keys(content).length;
-
 
     useEffect(() => {
         const realUserData = async () =>{
             try{
-                //const token = Auth.pinNumber() ? Auth.getToken() : null;
                 const token = Auth.getToken(); //code for testing
 
                 if (!token) {
@@ -46,14 +42,13 @@ const Messages = () =>{
            };
            realUserData();
            console.log(userData);
-           // addition settimeout needed
     }, [userDataLength, messageDataLength])
 
     const handleClick = async (user,messageId, e) => {
-        //const token = Auth.loggedIn() ? Auth.getToken(): null;
         e.preventDefault();
+
         setId(messageId);
-        const token = Auth.getToken(); // for testing purposes
+        const token = Auth.getToken();
         if(!token){
             return false
         }
@@ -67,7 +62,6 @@ const Messages = () =>{
             content={};
             content = await message[0].friends[0];
             setMessageData(content);
-            //setMessageData(messageToSend);
         } catch(err){
             console.log(err);
         }
@@ -114,7 +108,7 @@ return (
                 <table className='table w-full'>
                     <tbody className="hover">
 
-                    {/* create a new one for each friend */}
+                    {/* creates a new one for each friend */}
                      { userData.friends!=undefined && userData.friends.map((fri, index) =>{
                         return ( 
                             <tr key={fri._id} className='hover' onClick={(e) => handleClick(userData.username,fri._id, e)}>
