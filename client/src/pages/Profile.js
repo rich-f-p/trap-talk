@@ -33,7 +33,6 @@ const Profile = () => {
             }
         };
         realUserData();
-        console.log(userData);
     }, [userDataLength])
 
 

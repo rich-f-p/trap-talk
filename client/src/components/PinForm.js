@@ -21,7 +21,6 @@ const PinForm = () => {
               }
               const pin = await response.json();
               setPinData({pin:`${pin.pin}`})
-              console.log(pin.pin)
           }catch(err){
               console.log(err);
           }

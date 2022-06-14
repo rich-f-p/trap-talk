@@ -32,18 +32,15 @@ function FriendSearch() {
             }
            };
            realUserData();
-           console.log(userData);
     }, [userDataLength, holdlength]);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setSearch({ ...search, [name]: value});
-        console.log(search);
     };
 
     const handleAdd = async (body, e) => {
         e.preventDefault();
-        console.log('click')
         const me = userData;
 
         const token = Auth.getToken(); 
@@ -70,7 +67,6 @@ function FriendSearch() {
 
     const searchBtn = async (user,e) =>{
         e.preventDefault();
-        console.log('click')
 
         const token = Auth.getToken(); 
         if(!token){
@@ -86,12 +82,10 @@ function FriendSearch() {
             holdData = {};
             holdData = await list;
             setDisplay(list);
-            console.log(list)
         }
         catch(err){
             console.log(err);
         }
-        console.log(display[0])
         setSearch('')
     }
 
@@ -124,10 +118,10 @@ function FriendSearch() {
             </div>
             <div className="flex justify-center mt-5">
                 {display.username != undefined ?
-                    <div class="card w-96 bg-neutral text-neutral-content">
-                        <div class="card-body items-center text-center">
+                    <div className="card w-96 bg-neutral text-neutral-content">
+                        <div className="card-body items-center text-center">
                             <h2 className="card-title">{display.username}</h2>
-                            <div class="card-actions justify-end"></div>
+                            <div className="card-actions justify-end"></div>
                             <button className="btn btn-primary" onClick={(e) => handleAdd({ username: display.username, request: true }, e)} >add to friends</button>
                         </div>
                     </div> : <p>No Friends</p>

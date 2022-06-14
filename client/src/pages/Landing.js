@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import { 
     getMe,
-    receiveMessage,
-    sendMessage,
     thisMessage,
     userSendMessage
     } from '../utils/API';
@@ -41,7 +39,6 @@ const Messages = () =>{
             }
            };
            realUserData();
-           console.log(userData);
     }, [userDataLength, messageDataLength])
 
     const handleClick = async (user,messageId, e) => {
@@ -70,12 +67,10 @@ const Messages = () =>{
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setTextInput({ ...textInput, [name]: value , user:`${sender}`});
-        console.log(textInput);
     };
 
     const sendHandle = async (e) =>{
         e.preventDefault();
-        console.log('click')
         reciever = await messageData.username
         const token = Auth.getToken(); 
         if(!token){
@@ -99,6 +94,7 @@ const Messages = () =>{
         }
         handleClick(sender,id,e);
         setTextInput({text:'', user:`${sender}`})
+
     }
 
 return (
